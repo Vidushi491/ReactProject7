@@ -1,18 +1,18 @@
+import { nanoid } from "nanoid"
+import Create from "./Create"
+import Read from "./Read"
+
 
 const App = () => {
-
-const [todos, setTodos] = useState("")
- submitHandler
+  
+  const [todos, settodos] = useState([
+    {id: 1 , title: "Today's Task are" isCompleted: true },
+  ]);
 
   return (
     <div>
-     <h1>Complete Task</h1>
-     <form >
-      <input type='text' placeholder="title"/>
-      <br/>
-      <br/>
-      <button onClick={submitHandler}>Completed</button>
-      </form>
+      <Create/>
+      <Read/>
     </div>
   )
 }
