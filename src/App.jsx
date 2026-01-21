@@ -1,13 +1,10 @@
-import { nanoid } from "nanoid"
 import Create from "./Create"
 import Read from "./Read"
-
+import { useState } from "react"
 
 const App = () => {
   
-  const [todos, settodos] = useState([
-    {id: 1 , title: "Today's Task are" isCompleted: true },
-  ]);
+ 
 
   return (
     <div>
