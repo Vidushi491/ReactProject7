@@ -1,16 +1,22 @@
-import Create from "./Create"
-import Read from "./Read"
+import Create from "./Create";
+import Read from "./Read";
 import { useState } from "react"
-
 const App = () => {
   
- 
+ const [todos, settodos] = useState([
+      {
+        id: 1,
+        title: "Today's Task are",
+        isCompleted: true 
+        },
+    ]);
 
   return (
-    <div>
-      <Create/>
-      <Read/>
-    </div>
+    <>
+      
+       <Create todos={todos} settodos={settodos}/>
+       <Read todos={todos} settodos={settodos}/>
+    </>
   )
 }
 

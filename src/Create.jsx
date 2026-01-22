@@ -1,25 +1,20 @@
 import { nanoid } from "nanoid"
-import { useState } from "react"
-const Create = () => {
+import { Fragment, useState } from "react"
 
-  //  const [todos, settodos] = useState([
-  //     {
-  //       id: 1,
-  //       title: "Today's Task are",
-  //       isCompleted: true 
-  //       },
-  //   ]);
+const Create = (props) => {
+const todos =props.todos;
+const settodos =props.settodos;
 
-const [title, setTitle] = useState("")
+  const [title, setTitle] = useState("")
 
-const SubmitHandler = (e) => {
+  const SubmitHandler = (e) => {
   e.preventDefault()
 
   const newTitle = {
     id: nanoid(),
     title: title,
     isCompleted: false ,
-  }
+  };
 
   
   const copytodo = [...todos]
@@ -27,32 +22,23 @@ const SubmitHandler = (e) => {
   settodos(copytodo)
   setTitle("")
 };
-// const printtodos = todos.map(todo => {
-//   return <li key = {todo.id}>{todo.title}</li>
-// });
-// console.log(printtodos);
-
-  return (
-    <div>
-         <h1> To Do's List </h1>
-       <form  onSubmit={SubmitHandler}>
-         <br/>
-       <input onChange={(e) => setTitle(e.target.value)}
-       value = {title}
-       type="text"
-        placeholder="Write Here"/>
-       <br/>
-       <br/>
-       <button > Create To Do's </button>
-       <br/>
-       <br/>
-       </form>
-       <br/>
-       <br/>
-      
-
-    </div>
-  )
+ return(
+  <>
+  <h1> To Do's List </h1>
+      <form onSubmit={SubmitHandler}>
+        <br />
+        <input onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          type="text"
+          placeholder="Write Here" />
+        <br />
+        <br />
+        <button > Create To Do's </button>
+        <br />
+        <br />
+      </form>
+  </>
+ )
 }
 
 export default Create

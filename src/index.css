@@ -14,3 +14,7 @@ body{
     color: white;
     
 }
+
+ol {
+    list-style-type: decimal;
+}
