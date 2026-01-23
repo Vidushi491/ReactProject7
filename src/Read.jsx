@@ -2,9 +2,17 @@
 const Read = (props) => {
   const todos = props.todos;
   const settodos = props.settodos;
+  const DeleteHandler = (id) =>{
+    const filtertodos = todos.filter((todo) => todo.id != id);
+    settodos(filtertodos);
+  }
 
 const printtodos = todos.map((todo)=> {
-  return <li key = {todo.id}>{todo.title}</li>
+  return <li
+   key = {todo.id}>
+    {todo.title}
+    <span onClick={() => DeleteHandler(todo.id)}>    ❌</span>
+    </li>
 });
 
  
@@ -15,8 +23,6 @@ const printtodos = todos.map((todo)=> {
       <br />
       <br/>
        <h1> Pending ToDo's</h1>
-       <br/>
-       <br/>
       <ol>{printtodos}</ol>
     </>
   )

@@ -23,21 +23,21 @@ const settodos =props.settodos;
   setTitle("")
 };
  return(
-  <>
-  <h1> To Do's List </h1>
+  <div className="bg-teal-800 h-full  text-white w-[60%] ">
+  <h1 className="font-bold text-4xl p-10 px-10 py-10 ">
+     To <span className="text-amber-200">Do's </span>
+      Lists </h1>
       <form onSubmit={SubmitHandler}>
-        <br />
-        <input onChange={(e) => setTitle(e.target.value)}
+        <input
+        className="border-2px rounded mt-20px"
+         onChange={(e) => setTitle(e.target.value)}
           value={title}
           type="text"
           placeholder="Write Here" />
-        <br />
-        <br />
-        <button > Create To Do's </button>
-        <br />
-        <br />
+         <br/>
+        <button className="mt-30px"> Create To Do's </button>
       </form>
-  </>
+  </div>
  )
 }
 
