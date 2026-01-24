@@ -12,11 +12,11 @@ const App = () => {
     ]);
 
   return (
-    <>
+    <div className="bg-teal-800 min-h-screen text-white flex justify-between">
       
        <Create todos={todos} settodos={settodos}/>
        <Read todos={todos} settodos={settodos}/>
-    </>
+    </div>
   )
 }
 
