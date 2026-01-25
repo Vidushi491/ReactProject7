@@ -8,22 +8,23 @@ const Read = (props) => {
   }
 
 const printtodos = todos.map((todo)=> {
-  return <li className="flex justify-between"
-   key = {todo.id}>
-    {todo.title}
-    <span className="hover:scale-95 " onClick={() => DeleteHandler(todo.id)}>✅</span>
+  return <li 
+   key = {todo.id}
+   className="flex justify-between items-center mb-5 p-2 bg-amber-200 text-teal-800 font-bold"
+   >
+    <span className="text-xl font-bold">{todo.title}</span>
+    <button className="hover:scale-95 "
+     onClick={() => DeleteHandler(todo.id)}>
+      ✅
+     </button>
     </li>
 });
   return (
     <div className=" p-7 mx-5 my-7 ">
-       <div className=" flex justify-between gap-6">
+       <div className=" flex justify-between ">
         <div >
-        <h1 className="font-extrabold text-6xl "> <span className="text-amber-200">Pending</span> ToDo's</h1>
-        
-          <ol className="text-lg text-teal-800 font-bold mt-7 bg-amber-200 shadow-lg px-1 ">{printtodos}</ol>
-        
-      
-
+        <h1 className="font-extrabold text-6xl mb-10"> <span className="text-amber-200">Pending</span> ToDo's</h1>
+          <ol >{printtodos}</ol>
         </div>
        </div>
     </div>
