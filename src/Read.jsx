@@ -1,10 +1,11 @@
-
+import { toast } from 'react-toastify';
 const Read = (props) => {
   const todos = props.todos;
   const settodos = props.settodos;
   const DeleteHandler = (id) =>{
     const filtertodos = todos.filter((todo) => todo.id != id);
     settodos(filtertodos);
+    toast.error('Todo Completed !')
   }
 
 const printtodos = todos.map((todo)=> {
